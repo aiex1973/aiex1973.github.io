@@ -20,21 +20,34 @@ video {
 </style>
 
 <body align="center">
+    <div class="fixed-header">
+        <div class="container">
+            <nav>
+                <a href="#">Hanwook Chung</a>
+                <a href="#">About</a>
+            </nav>
+        </div>
+    </div>
+
 	<div class="video-wrapper">
        		<video playsinline autoplay muted loop id="myVideo">
                		<source src="Video/cow_mesh.mp4" type="video/mp4">
+			Your browser does not support HTML5 video.
        		</video>
-        <div class="header">
-                <a href="index.html", class="bigLink"> Hanwook Chung </a> <span class="spacer"> </span>
-        </div>
+
+	        <div class="header">
+        	        <a href="index.html", class="bigLink"> Hanwook Chung </a> <span class="spacer"> </span>
+        	</div>
 	</div>
 
-	<div class="smallLink">
-		<br><br><hr>
-		&copy <script>document.write(new Date().getFullYear())</script> Hanwook Chung
-		<br></br>
-		<script>document.write(new Data().getHours() + ":" + new Data().getMinutes() + ":" + new Data().getSeconds())</script>
-		<br><br><br><br><br><br>
+	<div class="fixed_footer">
+		<div class="container">
+			<br><br><hr>
+			&copy <script>document.write(new Date().getFullYear())</script> Hanwook Chung
+			<br></br>
+			<script>document.write(new Data().getHours())</script>
+			<br><br><br><br><br><br>
+		</div>
 	</div>
 
 </body>
