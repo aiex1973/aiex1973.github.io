@@ -24,8 +24,12 @@ LatexIT.add('p',true);
 	</div>
 
 	<div class="smallLink">
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
+		<br><br><hr>
+		var today = new Data();
+		var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 		&copy <script>document.write(new Date().getFullYear())</script> Hanwook Chung
+		<br></br>
+		document.write(time)
 		<br><br><br><br><br><br>
 	</div>
 
@@ -34,11 +38,5 @@ LatexIT.add('p',true);
 </html>
 
 <!-- Current Time -->
-Current Time:
-<input type="text" id="currentTime">
-<br><br>
-<script>
-var today = new Date();
-var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-  document.getElementById("currentTime").value = time;
-</script>
+<!--Current Time:-->
+<!--input type="text" id="currentTime"-->
