@@ -13,23 +13,20 @@ LatexIT.add('p',true);
 </head>
 
 <body align="center">
-	<div class="header">
-    		<a href="index.html", class="bigLink"> Hanwook Chung </a> <span class="spacer"> </span>
-  	</div>
-
 	<div class="video-wrapper">
        		<video autoplay muted loop id="myVideo">
                		<source src="Video/cow_mesh.mp4" type="video/mp4">
        		</video>
+        <div class="header">
+                <a href="index.html", class="bigLink"> Hanwook Chung </a> <span class="spacer"> </span>
+        </div>
 	</div>
 
 	<div class="smallLink">
 		<br><br><hr>
-		var today = new Data();
-		var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 		&copy <script>document.write(new Date().getFullYear())</script> Hanwook Chung
 		<br></br>
-		document.write(time)
+		<script>document.write(new Data().getHours() + ":" + new Data().getMinutes() + ":" + new Data().getSeconds())</script>
 		<br><br><br><br><br><br>
 	</div>
 
