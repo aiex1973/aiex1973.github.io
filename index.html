@@ -44,7 +44,29 @@
 			var invertPercentage = Math.min(100, scrollPercentage * 100); // Increase 200 to make the inversion happen faster
 			video.style.filter = `invert(${invertPercentage}%)`;
 		});
+
+		// Function to open the popup
+		function openPopup() {
+			document.getElementById("popup").style.display = "block";
+		}
+
+		// Function to close the popup
+		function closePopup() {
+			document.getElementById("popup").style.display = "none";
+		}
+
+		// Automatically open the popup when the page loads
+		window.onload = function() {
+			openPopup();
+		};
     </script>
+
+
+	<div class="popup" id="popup">
+		<span class="close-btn" onclick="closePopup()">&times;</span>
+		<h2>For a better page view</h2>
+		<p>Fullscreen desktop or landscape mode on phone</p>
+	</div>
 
 	<h1 class="heading">
 		<span>S</span>imulated-<span>E</span>nvironment <span>A</span>griculture <span>L</span>ab
