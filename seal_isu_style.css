@@ -82,9 +82,9 @@ html, body {
 .heading span {
     color: red;
 }
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
     display: none;
-}
+} */
 .content-window {
     /* height: 88vh; */
     height: calc(min(250vw, 88vh));
