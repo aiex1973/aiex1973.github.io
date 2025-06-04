@@ -19,9 +19,18 @@
             var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             var scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
             // var scrollPercentage = scrollTop / scrollHeight;
-			var scrollPercentage = scrollTop / window.innerHeight;
-            var colorValue = Math.round(255 * (1 - scrollPercentage));
-            document.body.style.backgroundColor = 'rgb(' + colorValue + ',' + colorValue + ',' + colorValue + ')';
+			var scrollPercentage = scrollTop / window.innerHeight * 2/3;
+            // var colorValue = Math.round(255 * (1 - scrollPercentage));
+			let colorValue;
+
+			if (scrollPercentage <= 2 / 3) {
+				let progress = scrollPercentage / (2 / 3);
+				colorValue = Math.round(255 * (1 - progress));
+			} else {
+				let progress = (scrollPercentage - 2 / 3) / (2 / 3);
+				colorValue = Math.round(255 * progress);
+			}
+			document.body.style.backgroundColor = 'rgb(' + colorValue + ',' + colorValue + ',' + colorValue + ')';
         }
 		function scrollToHalfPage() {
             // Scrolls to the 100vh mark
@@ -41,7 +50,7 @@
 		window.addEventListener('scroll', function() {
 			var video = document.getElementById('myVideo');
 			var scrollPercentage = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-			var invertPercentage = Math.min(100, scrollPercentage * 100); // Increase 200 to make the inversion happen faster
+			var invertPercentage = Math.min(100, scrollPercentage * 200); // Increase 200 to make the inversion happen faster
 			video.style.filter = `invert(${invertPercentage}%)`;
 		});
 
@@ -114,7 +123,7 @@
 			<div class="recruitment">
 				<div class="prospect-student">
 					<p>(updated sping 2025) for prospective students:\n<br><br>
-						<b style='color:red;'>No open graduate poisions at the moment!:\n</b> <br><br>
+						<b style='color:red;'>no open graduate poision at the moment! please check back the next academic semester:\n</b> <br><br>
 						if you are interested in working with me on advancing/solving agricultural 
 						indoor-environment systems/problems and believe you have strong background and passion for research, 
 						please send me an email (hwchung at iastate dot edu) with a title "[grad school app] first and last name" to be considered. 
@@ -128,12 +137,79 @@
 			</div>
 		</div>
 	</div>
+	<!-- <div class="footer-container">
+		<div class="footer">
+			&copy; <script>document.write(new Date().getFullYear())</script> HANWOOKCHUNG
+		</div>
+		
+	</div> -->
+
+<h1 class="heading-space">
+		<span>S</span>imulated-<span>E</span>nvironment <span>A</span>griculture <span>L</span>ab
+	</h1>
+	
+	<div class="content-window-slot">
+		<div class="content1">
+
+	
+				<div class="slot-machine-wrapper">
+					<div class="slot-machine1">
+						<div class="words1">
+							<div class="word">ADVANCING</div>
+							<div class="word">EFFICIENT</div>
+							<div class="word">SUSTAINABLE</div>
+							<div class="word">ETHICAL</div>
+							<div class="word">RESILIENT</div>
+							<div class="word">LIVESTOCK</div>
+							<div class="word">ACCESSIBLE</div>
+							<div class="word">친환경</div>
+							<div class="word">ENVIRONMENTAL</div>
+							<div class="word">INTELLIGENT</div>
+							<div class="word">CONSERVATIVE</div>
+							<div class="word">EFFECTIVE</div>
+							<div class="word">지속가능한</div>
+							<div class="word">FUTURE</div>
+							<div class="word">INNOVATIVE</div>
+							<div class="word">REGENERATIVE</div>
+							<div class="word">SCALABLE</div>
+							<div class="word">GLOBAL</div>
+							<div class="word">SMART</div>
+							<div class="word">CIRCULAR</div>
+						</div>
+					</div>
+					<div class="slot-machine2">
+						<div class="words2">
+							<div class="word">농업</div>
+							<div class="word">AGRICULTURE</div>
+							<div class="word">农业</div>
+							<div class="word">FOOD PRODUCTION</div>
+							<div class="word">LANDWIRTSCHAFT</div>
+							<div class="word">TARIM</div>
+							<div class="word">BARN</div>
+							<div class="word">산업</div>
+							<div class="word">FARMING</div>
+							<div class="word">음식</div>
+							<div class="word">HUSBANDRY</div>
+							<div class="word">農業</div>
+							<div class="word">AGRICULTURA</div>
+							<div class="word">DAIRY</div>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="static-word">AGRICULTURE</div> -->
+			
+
+		</div>
+	</div>
+
 	<div class="footer-container">
 		<div class="footer">
 			&copy; <script>document.write(new Date().getFullYear())</script> HANWOOKCHUNG
 		</div>
 		
 	</div>
+
+
 <script>
 
 	var canvas = document.getElementById("fluidCanvas");
@@ -971,5 +1047,70 @@
 	update();
 
 </script> 
+	<script>
+		const wordsContainer = document.querySelector('.words1');
+		const wordElements = Array.from(wordsContainer.children);
+
+		wordElements.forEach(word => {
+			const randomColor = getRandomColor();
+			word.style.color = randomColor;
+		});
+
+		function getRandomColor() {
+			const red = Math.floor(Math.random() * 256);
+			const green = Math.floor(Math.random() * 256);
+			const blue = Math.floor(Math.random() * 256);
+			return `rgb(${red}, ${green}, ${blue})`;
+		}
+
+		let currentOffset = 0;
+		function rotateWords1() {
+			currentOffset -= 120;
+			wordsContainer.style.transition = 'transform 0.5s';
+			wordsContainer.style.transform = `translateY(${currentOffset}px)`;
+			setTimeout(() => {
+				wordsContainer.style.transition = 'none';
+				const firstWord = wordsContainer.firstElementChild;
+				wordsContainer.appendChild(firstWord);
+				currentOffset += 120;
+				wordsContainer.style.transform = `translateY(${currentOffset}px)`;
+			}, 500);
+		}
+
+		setInterval(rotateWords1, 2000);
+	</script>
+	<script>
+  const wordsContainer2 = document.querySelector('.words2');
+  const wordElements2 = Array.from(wordsContainer2.children);
+
+  wordElements2.forEach(word => {
+    const randomColor = getRandomColor();
+    word.style.color = randomColor;
+  });
+
+  function getRandomColor() {
+    const red = Math.floor(Math.random() * 256);
+    const green = Math.floor(Math.random() * 256);
+    const blue = Math.floor(Math.random() * 256);
+    return `rgb(${red}, ${green}, ${blue})`;
+  }
+
+  let currentOffset2 = 0;
+  function rotateWords2() {
+    currentOffset2 += 120;
+    wordsContainer2.style.transition = 'transform 0.5s';
+    wordsContainer2.style.transform = `translateY(${currentOffset2}px)`;
+    setTimeout(() => {
+      wordsContainer2.style.transition = 'none';
+      const lastWord = wordsContainer2.lastElementChild;
+      wordsContainer2.insertBefore(lastWord, wordsContainer2.firstChild);
+      currentOffset2 -= 120;
+      wordsContainer2.style.transform = `translateY(${currentOffset2}px)`;
+    }, 500);
+  }
+
+  setInterval(rotateWords2, 5000); // Change every 5 seconds
+</script>
+
 </body>
 </html>
