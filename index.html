@@ -1047,69 +1047,70 @@
 	update();
 
 </script> 
-	<script>
-		const wordsContainer = document.querySelector('.words1');
-		const wordElements = Array.from(wordsContainer.children);
+<script>
+	const wordsContainer = document.querySelector('.words1');
+	const wordElements = Array.from(wordsContainer.children);
 
-		wordElements.forEach(word => {
-			const randomColor = getRandomColor();
-			word.style.color = randomColor;
-		});
+	wordElements.forEach(word => {
+		const randomColor = getRandomColor();
+		word.style.color = randomColor;
+	});
 
-		function getRandomColor() {
-			const red = Math.floor(Math.random() * 256);
-			const green = Math.floor(Math.random() * 256);
-			const blue = Math.floor(Math.random() * 256);
-			return `rgb(${red}, ${green}, ${blue})`;
-		}
+	function getRandomColor() {
+		const red = Math.floor(Math.random() * 256);
+		const green = Math.floor(Math.random() * 256);
+		const blue = Math.floor(Math.random() * 256);
+		return `rgb(${red}, ${green}, ${blue})`;
+	}
 
-		let currentOffset = 0;
-		function rotateWords1() {
-			currentOffset -= 120;
-			wordsContainer.style.transition = 'transform 0.5s';
+	let currentOffset = 0;
+	function rotateWords1() {
+		currentOffset -= 120;
+		wordsContainer.style.transition = 'transform 0.5s';
+		wordsContainer.style.transform = `translateY(${currentOffset}px)`;
+		setTimeout(() => {
+			wordsContainer.style.transition = 'none';
+			const firstWord = wordsContainer.firstElementChild;
+			wordsContainer.appendChild(firstWord);
+			currentOffset += 120;
 			wordsContainer.style.transform = `translateY(${currentOffset}px)`;
-			setTimeout(() => {
-				wordsContainer.style.transition = 'none';
-				const firstWord = wordsContainer.firstElementChild;
-				wordsContainer.appendChild(firstWord);
-				currentOffset += 120;
-				wordsContainer.style.transform = `translateY(${currentOffset}px)`;
-			}, 500);
-		}
+		}, 500);
+	}
 
-		setInterval(rotateWords1, 2000);
-	</script>
-	<script>
-  const wordsContainer2 = document.querySelector('.words2');
-  const wordElements2 = Array.from(wordsContainer2.children);
+	setInterval(rotateWords1, 2000);
+</script>
+	
+<script>
+	const wordsContainer2 = document.querySelector('.words2');
+	const wordElements2 = Array.from(wordsContainer2.children);
 
-  wordElements2.forEach(word => {
-    const randomColor = getRandomColor();
-    word.style.color = randomColor;
-  });
+	wordElements2.forEach(word => {
+	const randomColor = getRandomColor();
+	word.style.color = randomColor;
+	});
 
-  function getRandomColor() {
-    const red = Math.floor(Math.random() * 256);
-    const green = Math.floor(Math.random() * 256);
-    const blue = Math.floor(Math.random() * 256);
-    return `rgb(${red}, ${green}, ${blue})`;
-  }
+	function getRandomColor() {
+	const red = Math.floor(Math.random() * 256);
+	const green = Math.floor(Math.random() * 256);
+	const blue = Math.floor(Math.random() * 256);
+	return `rgb(${red}, ${green}, ${blue})`;
+	}
 
-  let currentOffset2 = 0;
-  function rotateWords2() {
-    currentOffset2 += 120;
-    wordsContainer2.style.transition = 'transform 0.5s';
-    wordsContainer2.style.transform = `translateY(${currentOffset2}px)`;
-    setTimeout(() => {
-      wordsContainer2.style.transition = 'none';
-      const lastWord = wordsContainer2.lastElementChild;
-      wordsContainer2.insertBefore(lastWord, wordsContainer2.firstChild);
-      currentOffset2 -= 120;
-      wordsContainer2.style.transform = `translateY(${currentOffset2}px)`;
-    }, 500);
-  }
+	let currentOffset2 = 0;
+	function rotateWords2() {
+	currentOffset2 += 120;
+	wordsContainer2.style.transition = 'transform 0.5s';
+	wordsContainer2.style.transform = `translateY(${currentOffset2}px)`;
+	setTimeout(() => {
+		wordsContainer2.style.transition = 'none';
+		const lastWord = wordsContainer2.lastElementChild;
+		wordsContainer2.insertBefore(lastWord, wordsContainer2.firstChild);
+		currentOffset2 -= 120;
+		wordsContainer2.style.transform = `translateY(${currentOffset2}px)`;
+	}, 500);
+	}
 
-  setInterval(rotateWords2, 5000); // Change every 5 seconds
+	setInterval(rotateWords2, 5000); // Change every 5 seconds
 </script>
 
 </body>
