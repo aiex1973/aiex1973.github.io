@@ -98,10 +98,13 @@ html, body {
 .content1 {
     display: grid;
     /* row-gap: 0px; */
-    height: 100%;
+    /* height: 100%; */
+    height: calc(min(250vw, 78vh));
     width: 80vw;
     /* border: 2px solid red; */
+    justify-content: space-evenly;
 }
+
 .hello-world {
     display: flex;
     text-align: justify;
@@ -261,7 +264,7 @@ li {
 
 .slot-machine1 {
     overflow: hidden;
-    height: 640;  /* Assuming each word's height is 30px, so 3*30px = 90px */
+    height: auto;  /* Assuming each word's height is 30px, so 3*30px = 90px */
     width: auto;
     /* border: 1px solid rgb(255, 255, 255); */
     /* background-color: #afafaf; */
@@ -269,10 +272,10 @@ li {
 
 .slot-machine2 {
     overflow: hidden;
-    height: 640;  /* Assuming each word's height is 30px, so 3*30px = 90px */
+    height: auto;  /* Assuming each word's height is 30px, so 3*30px = 90px */
     width: auto;
-    margin-left: 20px;
-    margin-bottom: 240px;
+    /* margin-left: 20px;
+    margin-bottom: 240px; */
     /* border: 1px solid rgb(255, 255, 255); */
     /* background-color: #afafaf; */
 }
@@ -282,6 +285,7 @@ li {
     overflow: hidden;
     align-items: center;
     position: relative; /* Needed for positioning the pseudo-elements */
+    justify-content: center
 }
 
 .slot-machine-wrapper::before, .slot-machine-wrapper::after {
@@ -295,16 +299,17 @@ li {
 }
 
 .slot-machine-wrapper::before {
-    top: calc(50% - 120px); /* Half of 30px (assuming each word's height is 30px) above the center */
+    top: calc(50% - 1.75vw); /* Half of 30px (assuming each word's height is 30px) above the center */
 }
 
 .slot-machine-wrapper::after {
-    bottom: calc(50% - 10px); /* Half of 30px below the center */
+    bottom: calc(50% - 1.75vw); /* Half of 30px below the center */
 }
 
 .word {
-    height: 120px; /* Adjust this if you change the font size */
-    font-size: 100px;
+    height: calc(min(3vw, 10vh));; /* Adjust this if you change the font size */
+    /* font-size: 200%; */
+    font-size: calc(min(3vw, 10vh));
     display: flex;
     /* align-items: center; */
     justify-content: center; 
@@ -314,11 +319,11 @@ li {
     color: red !important;  /* Changes the text color to red when hovered */
 }
 
-.words1 {
+/* .words1 {
     display: flex;
     flex-direction: column;
     will-change: transform;
-}
+} */
 
 .content-window-slot {
     /* height: 88vh; */

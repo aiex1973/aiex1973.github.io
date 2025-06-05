@@ -174,7 +174,6 @@
 							<div class="word">SCALABLE</div>
 							<div class="word">GLOBAL</div>
 							<div class="word">SMART</div>
-							<div class="word">CIRCULAR</div>
 						</div>
 					</div>
 					<div class="slot-machine2">
@@ -192,7 +191,6 @@
 							<div class="word">HUSBANDRY</div>
 							<div class="word">農業</div>
 							<div class="word">AGRICULTURA</div>
-							<div class="word">DAIRY</div>
 						</div>
 					</div>
 				</div>
@@ -1063,18 +1061,21 @@
 		return `rgb(${red}, ${green}, ${blue})`;
 	}
 
+	let wordHeight = wordElements[0].offsetHeight;
+
 	let currentOffset = 0;
 	function rotateWords1() {
-		currentOffset -= 120;
+		wordHeight = wordElements[0].offsetHeight;
+		currentOffset -= wordHeight;
 		wordsContainer.style.transition = 'transform 0.5s';
 		wordsContainer.style.transform = `translateY(${currentOffset}px)`;
 		setTimeout(() => {
 			wordsContainer.style.transition = 'none';
 			const firstWord = wordsContainer.firstElementChild;
 			wordsContainer.appendChild(firstWord);
-			currentOffset += 120;
+			currentOffset += wordHeight;
 			wordsContainer.style.transform = `translateY(${currentOffset}px)`;
-		}, 500);
+		}, 1000);
 	}
 
 	setInterval(rotateWords1, 2000);
@@ -1089,6 +1090,7 @@
 	word.style.color = randomColor;
 	});
 
+	
 	function getRandomColor() {
 	const red = Math.floor(Math.random() * 256);
 	const green = Math.floor(Math.random() * 256);
@@ -1096,18 +1098,21 @@
 	return `rgb(${red}, ${green}, ${blue})`;
 	}
 
+	let wordHeight2 = wordElements2[0].offsetHeight;
+
 	let currentOffset2 = 0;
 	function rotateWords2() {
-	currentOffset2 += 120;
-	wordsContainer2.style.transition = 'transform 0.5s';
-	wordsContainer2.style.transform = `translateY(${currentOffset2}px)`;
-	setTimeout(() => {
-		wordsContainer2.style.transition = 'none';
-		const lastWord = wordsContainer2.lastElementChild;
-		wordsContainer2.insertBefore(lastWord, wordsContainer2.firstChild);
-		currentOffset2 -= 120;
+		wordHeight2 = wordElements2[0].offsetHeight;
+		currentOffset2 += wordHeight2;
+		wordsContainer2.style.transition = 'transform 0.5s';
 		wordsContainer2.style.transform = `translateY(${currentOffset2}px)`;
-	}, 500);
+		setTimeout(() => {
+			wordsContainer2.style.transition = 'none';
+			const lastWord = wordsContainer2.lastElementChild;
+			wordsContainer2.insertBefore(lastWord, wordsContainer2.firstChild);
+			currentOffset2 -= wordHeight2;
+			wordsContainer2.style.transform = `translateY(${currentOffset2}px)`;
+		}, 1000);
 	}
 
 	setInterval(rotateWords2, 5000); // Change every 5 seconds
