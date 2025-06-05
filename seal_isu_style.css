@@ -299,15 +299,15 @@ li {
 }
 
 .slot-machine-wrapper::before {
-    top: calc(50% - 1.75vw); /* Half of 30px (assuming each word's height is 30px) above the center */
+    top: calc(50% - 2vw); /* Half of 30px (assuming each word's height is 30px) above the center */
 }
 
 .slot-machine-wrapper::after {
-    bottom: calc(50% - 1.75vw); /* Half of 30px below the center */
+    bottom: calc(50% - 2vw); /* Half of 30px below the center */
 }
 
 .word {
-    height: calc(min(3vw, 10vh));; /* Adjust this if you change the font size */
+    height: calc(min(4vw, 10vh));; /* Adjust this if you change the font size */
     /* font-size: 200%; */
     font-size: calc(min(3vw, 10vh));
     display: flex;
